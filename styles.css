@@ -1,0 +1,265 @@
+/* Fondo */
+body {
+    background-color: #f5f5f5;
+}
+
+/* LOGO */
+.logo {
+    font-size: 50px;
+    color: #333;
+    font-family: Arial, sans-serif;
+    margin-top: 40px;
+    margin-left: 100px;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 100px;
+}
+
+/* NAV */
+.nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+}
+
+/* HERO */
+.titulo {
+    margin-left: 650px;
+    font-size: 50px;
+    color: #000;
+    font-family: Arial, sans-serif;
+    margin-top: 40px;
+}
+
+.subtitulo {
+    margin-left: 692px;
+    font-size: 28px;
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+}
+
+/* BOTON Comprar ahora */
+.CTA {
+    display: inline-block;
+    margin-left: 840px;
+    margin-top: 30px;
+
+    padding: 15px 30px;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+
+    text-decoration: none;
+    border-radius: 8px;
+
+    color: white;
+    background-color: #333;
+}
+
+/* PRODUCTOS */
+.productos h2 {
+    text-align: center;
+    margin-top: 80px;
+    font-size: 32px;
+    font-family: Arial, sans-serif;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 25px;
+    width: 250px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* PRECIOS */
+.precios {
+    text-align: center;
+    margin-top: 80px;
+    font-family: Arial, sans-serif;
+}
+
+.precios h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 60%;
+}
+
+th {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* CONTACTO */
+.contacto {
+    text-align: center;
+    margin-top: 80px;
+    font-family: Arial, sans-serif;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+input,
+textarea {
+    width: 300px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* BOTON */
+button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+}
+
+/* FOOTER */
+.footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 80px;
+    font-family: Arial, sans-serif;
+}
+
+.redes a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* NAV (inicio, contacto) */
+.nav a {
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    color: #f5f5f5;
+}
+
+/* BOTON PRINCIPAL */
+.CTA {
+    transition: 0.3s;
+}
+
+.CTA:hover {
+    transform: scale(1.1);
+}
+
+/* CARDS */
+.card {
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+}
+
+/* TABLA */
+tr {
+    transition: 0.3s;
+}
+
+tr:hover {
+    background-color: #acbd99;
+}
+
+
+/* BOTON FORM */
+button {
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    /* HEADER */
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        margin-left: 0;
+    }
+
+    .nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    /* HERO */
+    .titulo {
+        margin-left: 0;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .subtitulo {
+        margin-left: 0;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .CTA {
+        margin-left: 0;
+        display: block;
+        text-align: center;
+    }
+
+    /* PRODUCTOS */
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* TABLA */
+    table {
+        width: 90%;
+    }
+
+    /* FORM */
+    input,
+    textarea {
+        width: 90%;
+    }
+}
