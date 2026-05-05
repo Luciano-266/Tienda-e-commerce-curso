@@ -226,3 +226,12 @@ button:hover {
         width: 100%;
     }
 }
+
+/* fotos  cards */
+.card-img {
+    width: 100%;          
+    height: 180px;        
+    object-fit: cover;     
+    border-radius: 10px;   
+    margin-bottom: 15px;  
+}
