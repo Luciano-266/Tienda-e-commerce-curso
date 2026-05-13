@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetWorld.com</title>
+    <link rel="stylesheet" href="tiendaMascotas.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <h1 class="logo">PetWorld</h1>
+        <nav class="nav">
+            <a href="#">Inicio</a>
+            <a href="#">Productos</a>
+            <a href="#">Ofertas</a>
+            <a href="#">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- Envolvemos el contenido principal para poder ocultarlo -->
+    <div id="vista-inicio">
+
+        <!-- HERO -->
+        <section class="hero">
+            <h2 class="titulo">El lugar seguro para tu mejor amigo</h2>
+            <p class="subtitulo">Calidad, confianza y amor animal</p>
+            <a href="#" class="CTA">Ver Secciones</a>
+        </section>
+
+        <!-- Tipo Mascota -->
+        <div class="selector-mascota"></div>
+        <h2> ¿Para quien estas comprando hoy? </h2>
+
+        <!-- Seleccionar Mascota -->
+        <section class="productos">
+            <h2>¿Para quién estás comprando hoy?</h2>
+
+            <div class="cards">
+                <!-- CARD PERRO -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&q=80&w=500"
+                        alt="Perro" class="card-img">
+                    <h3>Perro</h3>
+                    <p>Alimentos, Snacks, Premios, Juguetes, Camas, Casas, Higiene, Collares.</p>
+                </div>
+
+                <!-- CARD GATO -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=500"
+                        alt="Gato" class="card-img">
+                    <h3>Gato</h3>
+                    <p>Alimento, Caja de arena, Juguetes, Rascadores, Camas, Higiene, Cepillos.</p>
+                </div>
+
+                <!-- CARD OTROS -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1520038410233-7141be7e6f97?auto=format&fit=crop&q=80&w=500"
+                        alt="Otros" class="card-img">
+                    <h3>Otros</h3>
+                    <p>Semillas, Jaulas, Nidos, Snacks, Cepillos, Ruedas, Alimento Especial, Peceras.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ofertas Disponibles -->
+        <section class="precios">
+            <h2>Ofertas</h2>
+
+            <table>
+                <tr>
+                    <th>Oferta</th>
+                    <th>Precio</th>
+                </tr>
+
+                <tr>
+                    <td>Set completo para perros</td>
+                    <td>$50.000</td>
+                </tr>
+
+                <tr>
+                    <td>Set completo para gatos</td>
+                    <td>$45.000</td>
+                </tr>
+
+                <tr>
+                    <td>Set Mixto perro y gato</td>
+                    <td>$80.000</td>
+                </tr>
+            </table>
+        </section>
+
+
+        <!-- CONTACTO -->
+        <section class="contacto">
+            <h2>Contacto</h2>
+
+            <form>
+                <input type="text" placeholder="Nombre" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Mensaje" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- SECCIÓN CRUD VISUALMENTE LISTA -->
+    <section id="vista-crud" style="display: none; background-color: #f0f2f5; padding: 40px 5%;">
+        <div class="contenedor-app">
+            <!-- Barra Lateral / Header de la sección -->
+            <header class="admin-header">
+                <button onclick="volver()" class="btn-retroceder">← Tienda</button>
+                <div class="info-seccion">
+                    <h2 id="titulo-gestion">Panel de Control</h2>
+                    <span class="badge" id="nombre-mascota-seleccionada">Mascota</span>
+                </div>
+            </header>
+
+            <!-- Resumen de Inventario (Visual) -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-icon">📦</span>
+                    <div class="stat-info">
+                        <span class="stat-value">Activo</span>
+                        <span class="stat-label">Estado Stock</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🚚</span>
+                    <div class="stat-info">
+                        <span class="stat-value">Envío Gratis</span>
+                        <span class="stat-label">Sobre $30.000</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabla de Productos -->
+            <div class="tabla-container">
+                <div class="tabla-header">
+                    <h3>Listado de Productos Disponibles</h3>
+                    <button class="btn-nuevo">+ Agregar Item</button>
+                </div>
+                <table class="tabla-visual">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Producto</th>
+                            <th>Estado</th>
+                            <th>Precio Unitario</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpo-tabla">
+                        <!-- Aquí se cargará el "backend" simulado -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>PetWorld. Todos los derechos reservados.</p>
+
+        <div class="redes">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+    </footer>
+    <script src="tiendaMascotas.js"></script>
+</body>
+
+</html>
