@@ -4,103 +4,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StyleShop</title>
+    <title>StyleFlow | Tienda de Ropa</title>
     <link rel="stylesheet" href="tiendaRopa.css">
 </head>
 
 <body>
-
-    <!-- HEADER -->
     <header class="header">
-        <h1 class="logo">StyleShop</h1>
+        <h1 class="logo">StyleFlow</h1>
         <nav class="nav">
             <a href="#">Inicio</a>
-            <a href="#">Productos</a>
+            <a href="#">Colecciones</a>
             <a href="#">Ofertas</a>
             <a href="#">Contacto</a>
         </nav>
     </header>
 
-    <!-- HERO -->
-    <section class="hero">
-        <h2 class="titulo">👕 Nueva colección 👕</h2>
-        <p class="subtitulo">Descubre la mejor ropa al mejor precio</p>
-        <a href="#" class="CTA">Comprar ahora</a>
-    </section>
+    <div id="vista-inicio">
+        <section class="hero">
+            <h2 class="titulo">Define tu estilo cada día</h2>
+            <p class="subtitulo">Tendencias exclusivas y calidad premium</p>
+            <a href="#" class="CTA">Ver Colecciones</a>
+        </section>
 
-    <!-- PRODUCTOS -->
-    <section class="productos">
-        <h2>Productos</h2>
+        <section class="productos">
+            <h2>¿Qué estás buscando hoy?</h2>
+            <div class="cards">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=500"
+                        alt="Mujer" class="card-img">
+                    <h3>Mujer</h3>
+                    <p>Vestidos, Blusas, Pantalones, Calzado y Abrigos de temporada.</p>
+                </div>
 
-        <div class="cards">
-            <div class="card">
-                <h3>Polera básica</h3>
-                <p>$9.990</p>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?auto=format&fit=crop&q=80&w=500"
+                        alt="Hombre" class="card-img">
+                    <h3>Hombre</h3>
+                    <p>Camisas, Jeans, Trajes, Poleras y Ropa Deportiva.</p>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&q=80&w=500"
+                        alt="Accesorios" class="card-img">
+                    <h3>Accesorios</h3>
+                    <p>Relojes, Gafas de sol, Cinturones, Bolsos y Joyería.</p>
+                </div>
             </div>
+        </section>
 
-            <div class="card">
-                <h3>Jeans clásicos</h3>
-                <p>$19.990</p>
-            </div>
+        <section class="precios">
+            <h2>Ofertas de Temporada</h2>
+            <table>
+                <tr>
+                    <th>Pack Oferta</th>
+                    <th>Precio</th>
+                </tr>
+                <tr>
+                    <td>Outfit Completo Casual</td>
+                    <td>$45.000</td>
+                </tr>
+                <tr>
+                    <td>Pack 3 Poleras Básicas</td>
+                    <td>$25.000</td>
+                </tr>
+                <tr>
+                    <td>Set Accesorios Elegance</td>
+                    <td>$60.000</td>
+                </tr>
+            </table>
+        </section>
 
-            <div class="card">
-                <h3>Chaqueta</h3>
-                <p>$29.990</p>
-            </div>
+        <section class="contacto">
+            <h2>Contacto</h2>
+            <form>
+                <input type="text" placeholder="Nombre" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Cuéntanos qué buscas..." required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </div>
+
+    <section id="vista-crud" style="display: none; background-color: #f9f9f9; padding: 40px 5%;">
+        <div class="contenedor-app">
+            <header class="admin-header">
+                <button onclick="volver()" class="btn-retroceder">← Volver</button>
+                <div class="info-seccion">
+                    <h2 id="titulo-gestion">Catálogo</h2>
+                    <span class="badge" id="nombre-mascota-seleccionada">Categoría</span>
+                </div>
+                <div class="cart-icon-container" onclick="finalizarCompra()">
+                    <span style="font-size: 30px;">🛒</span>
+                    <span id="cart-count">0</span>
+                </div>
+            </header>
+            <div id="grid-productos" class="grid-productos"></div>
         </div>
     </section>
 
-    <!-- PRECIOS -->
-    <section class="precios">
-        <h2>Ofertas</h2>
-
-        <table>
-            <tr>
-                <th>Producto</th>
-                <th>Precio</th>
-            </tr>
-
-            <tr>
-                <td>Polera</td>
-                <td>$7.990</td>
-            </tr>
-
-            <tr>
-                <td>Jeans</td>
-                <td>$15.990</td>
-            </tr>
-
-            <tr>
-                <td>Chaqueta</td>
-                <td>$24.990</td>
-            </tr>
-        </table>
-    </section>
-
-    <!-- CONTACTO -->
-    <section class="contacto">
-        <h2>Contacto</h2>
-
-        <form>
-            <input type="text" placeholder="Nombre" required>
-            <input type="email" placeholder="Email" required>
-            <textarea placeholder="Mensaje" required></textarea>
-
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
-
-    <!-- FOOTER -->
     <footer class="footer">
-        <p>StyleShop. Todos los derechos reservados.</p>
-
+        <p>&copy; 2026 StyleFlow. Todos los derechos reservados.</p>
         <div class="redes">
             <a href="#">Facebook</a>
             <a href="#">Instagram</a>
-            <a href="#">Twitter</a>
+            <a href="#">TikTok</a>
         </div>
     </footer>
-
+    <script src="tiendaRopa.js"></script>
 </body>
 
 </html>

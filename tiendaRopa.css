@@ -1,265 +1,358 @@
-/* Fondo */
+/* --- Variables de Marca --- */
+:root {
+    --primario: #1a1a1a;
+    /* Negro elegante */
+    --acento: #c5a059;
+    /* Dorado/Bronce para detalles */
+    --fondo-gris: #f4f4f4;
+    /* Fondo suave */
+    --blanco: #ffffff;
+    --texto-suave: #666666;
+    --transicion: all 0.3s ease;
+}
+
+/* --- Base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: #f5f5f5;
+    background-color: var(--blanco);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--primario);
+    line-height: 1.6;
 }
 
-/* LOGO */
-.logo {
-    font-size: 50px;
-    color: #333;
-    font-family: Arial, sans-serif;
-    margin-top: 40px;
-    margin-left: 100px;
-}
-
-/* HEADER */
+/* --- HEADER --- */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-right: 100px;
+    padding: 20px 8%;
+    background-color: var(--blanco);
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-/* NAV */
+.logo {
+    font-size: 28px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
 .nav a {
-    margin-left: 20px;
+    margin-left: 25px;
     text-decoration: none;
-    color: #333;
-    font-size: 18px;
-    font-family: Arial, sans-serif;
+    color: var(--primario);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: var(--transicion);
 }
 
-/* HERO */
+.nav a:hover {
+    color: var(--acento);
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('https://images.unsplash.com/photo-1441996632126-af08871c8943?auto=format&fit=crop&q=80&w=1500') no-repeat center/cover;
+    color: var(--blanco);
+    margin-bottom: 50px;
+}
+
 .titulo {
-    margin-left: 650px;
-    font-size: 50px;
-    color: #000;
-    font-family: Arial, sans-serif;
-    margin-top: 40px;
+    font-size: 60px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
 }
 
 .subtitulo {
-    margin-left: 692px;
-    font-size: 28px;
-    font-family: Arial, sans-serif;
-    margin-top: 20px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 35px;
+    font-weight: 300;
 }
 
-/* BOTON Comprar ahora */
 .CTA {
     display: inline-block;
-    margin-left: 840px;
-    margin-top: 30px;
-
-    padding: 15px 30px;
-    font-size: 20px;
-    font-family: Arial, sans-serif;
-
+    padding: 15px 45px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     text-decoration: none;
-    border-radius: 8px;
-
-    color: white;
-    background-color: #333;
+    background-color: var(--blanco);
+    color: var(--primario);
+    font-weight: bold;
+    transition: var(--transicion);
 }
 
-/* PRODUCTOS */
-.productos h2 {
+.CTA:hover {
+    background-color: var(--primario);
+    color: var(--blanco);
+    transform: translateY(-3px);
+}
+
+/* --- SECCIONES / TITULOS --- */
+h2 {
     text-align: center;
-    margin-top: 80px;
-    font-size: 32px;
-    font-family: Arial, sans-serif;
+    margin: 60px 0 40px;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 400;
 }
 
+/* --- CARDS DE CATEGORÍAS --- */
 .cards {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 8%;
 }
 
 .card {
-    background-color: #ffffff;
-    padding: 25px;
-    width: 250px;
-    border-radius: 10px;
-    font-family: Arial, sans-serif;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--blanco);
+    width: 350px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: var(--transicion);
+    position: relative;
+    border: 1px solid #f0f0f0;
 }
 
-/* PRECIOS */
+.card-img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.card:hover .card-img {
+    transform: scale(1.05);
+}
+
+.card h3 {
+    padding: 20px 0 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card p {
+    padding: 0 0 20px;
+    color: var(--texto-suave);
+    font-size: 14px;
+}
+
+/* --- TABLA DE PRECIOS/OFERTAS --- */
 .precios {
-    text-align: center;
-    margin-top: 80px;
-    font-family: Arial, sans-serif;
-}
-
-.precios h2 {
-    font-size: 32px;
-    margin-bottom: 30px;
+    padding: 80px 8%;
+    background-color: #fafafa;
+    margin-top: 50px;
 }
 
 table {
+    width: 100%;
+    max-width: 900px;
     margin: 0 auto;
     border-collapse: collapse;
-    width: 60%;
+    background: var(--blanco);
 }
 
 th {
-    background-color: #333;
-    color: white;
-    padding: 15px;
+    background-color: var(--primario);
+    color: var(--blanco);
+    padding: 20px;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
 }
 
 td {
-    padding: 15px;
-    border-bottom: 1px solid #ccc;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    font-size: 15px;
 }
 
-/* CONTACTO */
+/* --- GRID DE PRODUCTOS (VISTA INTERNA) --- */
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 40px 0;
+}
+
+.product-card {
+    background: var(--blanco);
+    transition: var(--transicion);
+    border: 1px solid #eee;
+}
+
+.product-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 20px;
+    text-align: left;
+}
+
+.product-price {
+    color: var(--acento);
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.btn-comprar {
+    background-color: var(--primario);
+    color: var(--blanco);
+    border: none;
+    padding: 12px;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transicion);
+}
+
+.btn-comprar:hover {
+    background-color: var(--acento);
+}
+
+/* --- ADMIN / NAV INTERNA --- */
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    border-bottom: 2px solid var(--primario);
+    padding-bottom: 20px;
+}
+
+.btn-retroceder {
+    background: none;
+    border: 1px solid var(--primario);
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.badge {
+    background: var(--acento);
+    color: var(--blanco);
+    padding: 5px 15px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.cart-icon-container {
+    position: relative;
+    cursor: pointer;
+}
+
+#cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: var(--acento);
+    color: white;
+    font-size: 11px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* --- FORMULARIO --- */
 .contacto {
-    text-align: center;
-    margin-top: 80px;
-    font-family: Arial, sans-serif;
+    padding: 100px 8%;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 input,
 textarea {
-    width: 300px;
-    padding: 12px;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
     border: 1px solid #ccc;
-    border-radius: 6px;
+    outline: none;
+    font-family: inherit;
 }
 
-/* BOTON */
-button {
-    background-color: #333;
-    color: white;
+input:focus,
+textarea:focus {
+    border-color: var(--acento);
+}
+
+form button {
+    background: var(--primario);
+    width: 100%;
+    padding: 18px;
     border: none;
-    padding: 12px 25px;
-    border-radius: 6px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-/* FOOTER */
+/* --- FOOTER --- */
 .footer {
-    background-color: #222;
-    color: white;
+    background-color: var(--primario);
+    color: var(--blanco);
+    padding: 60px 8%;
     text-align: center;
-    padding: 20px;
-    margin-top: 80px;
-    font-family: Arial, sans-serif;
 }
 
 .redes a {
-    color: white;
+    color: var(--acento);
     text-decoration: none;
-    margin: 0 10px;
+    margin: 0 15px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* NAV (inicio, contacto) */
-.nav a {
-    transition: 0.3s;
-}
-
-.nav a:hover {
-    color: #f5f5f5;
-}
-
-/* BOTON PRINCIPAL */
-.CTA {
-    transition: 0.3s;
-}
-
-.CTA:hover {
-    transform: scale(1.1);
-}
-
-/* CARDS */
-.card {
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-10px) scale(1.03);
-}
-
-/* TABLA */
-tr {
-    transition: 0.3s;
-}
-
-tr:hover {
-    background-color: #acbd99;
-}
-
-
-/* BOTON FORM */
-button {
-    transition: 0.3s;
-}
-
-button:hover {
-    transform: scale(1.05);
-}
-
-
-
-/* RESPONSIVE */
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-
-    /* HEADER */
-    .header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .logo {
-        margin-left: 0;
-    }
-
-    .nav a {
-        display: block;
-        margin: 10px 0;
-    }
-
-    /* HERO */
     .titulo {
-        margin-left: 0;
-        font-size: 30px;
-        text-align: center;
+        font-size: 35px;
     }
 
-    .subtitulo {
-        margin-left: 0;
-        font-size: 18px;
-        text-align: center;
+    .header {
+        padding: 15px 5%;
     }
 
-    .CTA {
-        margin-left: 0;
-        display: block;
-        text-align: center;
+    .nav {
+        display: none;
     }
 
-    /* PRODUCTOS */
-    .cards {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* TABLA */
-    table {
-        width: 90%;
-    }
-
-    /* FORM */
-    input,
-    textarea {
-        width: 90%;
+    /* Ocultar nav en móvil para simplificar */
+    .card {
+        width: 100%;
     }
 }
