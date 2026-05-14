@@ -151,7 +151,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Conectar las cards de la tienda ---
-    // IMPORTANTE: Esto debe estar dentro del DOMContentLoaded
     document.querySelectorAll('.card').forEach(card => {
         card.addEventListener('click', () => {
             const nombre = card.querySelector('h3').innerText;
