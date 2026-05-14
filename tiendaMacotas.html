@@ -57,7 +57,7 @@
 
                 <!-- CARD OTROS -->
                 <div class="card">
-                    <img src="https://images.unsplash.com/photo-1520038410233-7141be7e6f97?auto=format&fit=crop&q=80&w=500"
+                    <img src="https://images.unsplash.com/photo-1535241749838-299277b6305f?auto=format&fit=crop&q=80&w=500"
                         alt="Otros" class="card-img">
                     <h3>Otros</h3>
                     <p>Semillas, Jaulas, Nidos, Snacks, Cepillos, Ruedas, Alimento Especial, Peceras.</p>
@@ -108,55 +108,25 @@
     </div>
 
     <!-- SECCIÓN CRUD VISUALMENTE LISTA -->
-    <section id="vista-crud" style="display: none; background-color: #f0f2f5; padding: 40px 5%;">
+    <section id="vista-crud" style="display: none; background-color: #f9f9f9; padding: 40px 5%;">
         <div class="contenedor-app">
-            <!-- Barra Lateral / Header de la sección -->
+            <!-- Encabezado de la Tienda -->
             <header class="admin-header">
-                <button onclick="volver()" class="btn-retroceder">← Tienda</button>
+                <button onclick="volver()" class="btn-retroceder">← Volver</button>
                 <div class="info-seccion">
-                    <h2 id="titulo-gestion">Panel de Control</h2>
+                    <h2 id="titulo-gestion">Tienda de Mascotas</h2>
                     <span class="badge" id="nombre-mascota-seleccionada">Mascota</span>
+                </div>
+                <!-- Icono de Carrito -->
+                <div class="cart-icon-container" onclick="finalizarCompra()">
+                    <span style="font-size: 30px;">🛒</span>
+                    <span id="cart-count">0</span>
                 </div>
             </header>
 
-            <!-- Resumen de Inventario (Visual) -->
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <span class="stat-icon">📦</span>
-                    <div class="stat-info">
-                        <span class="stat-value">Activo</span>
-                        <span class="stat-label">Estado Stock</span>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-icon">🚚</span>
-                    <div class="stat-info">
-                        <span class="stat-value">Envío Gratis</span>
-                        <span class="stat-label">Sobre $30.000</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tabla de Productos -->
-            <div class="tabla-container">
-                <div class="tabla-header">
-                    <h3>Listado de Productos Disponibles</h3>
-                    <button class="btn-nuevo">+ Agregar Item</button>
-                </div>
-                <table class="tabla-visual">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Producto</th>
-                            <th>Estado</th>
-                            <th>Precio Unitario</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody id="cuerpo-tabla">
-                        <!-- Aquí se cargará el "backend" simulado -->
-                    </tbody>
-                </table>
+            <!-- Aquí se cargarán las Cards de productos -->
+            <div id="grid-productos" class="grid-productos">
+                <!-- JS llenará esto automáticamente -->
             </div>
         </div>
     </section>
